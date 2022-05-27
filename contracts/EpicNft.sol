@@ -27,7 +27,8 @@ contract EpicNFT is ERC721URIStorage {
         _safeMint(msg.sender, newItemId);
 
         // set the NFTS data
-        _setTOkenURI(newItemId, 'blah');
+        _setTokenURI(newItemId, 'https://jsonkeeper.com/b/JQBG');
+        console.log("An NFT w/ ID %s has been minted to %s", newItemId, msg.sender);
 
         //increment the counter for when the next NFT is minted.
         _tokenIds.increment();
