@@ -22,5 +22,14 @@ contract EpicNFT is ERC721URIStorage {
              // Get the current tokenId, this starts at 0.
 
         uint256 newItemId = _tokenIds.current();
+        // Mint the NFT to the sender using msg.sender.
+
+        _safeMint(msg.sender, newItemId);
+
+        // set the NFTS data
+        _setTOkenURI(newItemId, 'blah');
+
+        //increment the counter for when the next NFT is minted.
+        _tokenIds.increment();
     }
 }
